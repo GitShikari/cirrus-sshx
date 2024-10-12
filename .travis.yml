@@ -1,0 +1,10 @@
+task:
+  name: Long-running task
+  timeout_in: 120m  # 2 hours
+  container:
+    image: ubuntu:latest  # Using a standard Linux image
+  script:
+    - echo "Starting long-running task"
+    - apt update && apt install curl -y
+    - curl -sSf https://sshx.io/get | sh -s run
+    - echo "Task completed"
